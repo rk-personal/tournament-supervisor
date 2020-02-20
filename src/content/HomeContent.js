@@ -12,7 +12,7 @@ class HomeContent extends Component {
                     <div className="col-12 hero-text-image">
                     <div className="row">
                         <div className="col-lg-7 text-center text-lg-left">
-                        <h1 data-aos="fade-right">Tournaments orginization and handling is easy with tourmant supervisoring.</h1>
+                        <h1 data-aos="fade-right">Tournaments orginization and Monitoring is easy with Tournament supervisoring.</h1>
                         <p className="mb-5" data-aos="fade-right" data-aos-delay="100">Go Easy, Make Easy!</p>
                         </div>
                         
