@@ -19,7 +19,7 @@ class InternalDetailBox extends Component {
         return this.state.matchSummary.map((match) => {
             let date = new Date(match[3]).toLocaleDateString();
             if(date > todayDate || (date === todayDate && isTimeBeforeEnd)) {
-                return <tr><td  style={{textAlign: "center"}}>{++i}</td><td  style={{textAlign: "center"}}>{match[1]}</td><td  style={{textAlign: "center"}}>{match[2]}</td><td  style={{textAlign: "center"}}>{match[3]}</td></tr>;
+                return <tr><td  style={{textAlign: "center"}}>{++i}</td><td  style={{textAlign: "center"}}>{match[1]}</td><td  style={{textAlign: "center"}}>{match[2]}</td><td  style={{textAlign: "center"}}>{match[3]}</td><td  style={{textAlign: "center"}}>{match[7]}</td></tr>;
             } else {
                 return null
             }
@@ -40,8 +40,7 @@ class InternalDetailBox extends Component {
     getScoreBoard() {
         let teamsData = {}, teams = [], i = 0;
         this.state.matchSummary.forEach((key) => {
-            if(key[5]) {
-                let team1 = key[1];
+            let team1 = key[1];
                 let team2 = key[2];
                 if(team1[team1.length-1] === " ") {
                     team1 = team1.substring(0, team1.length-1);
@@ -75,6 +74,7 @@ class InternalDetailBox extends Component {
                     };
                     teams.push(team2);
                 }
+            if(key[5]) {
                 teamsData[team1].noOfMatches += 1;
                 teamsData[team2].noOfMatches += 1;
                 if(key[5] && key[5] === 1) {
@@ -135,10 +135,10 @@ class InternalDetailBox extends Component {
             <div style={{overflowY: 'auto', height: '400px', width: '100%'}}>
             {this.state.data === 1 ? <table className="table">
                 <tr>
-                <th  style={{textAlign: "center"}}>index</th><th  style={{textAlign: "center"}}>Team 1</th><th  style={{textAlign: "center"}}>Team 2</th><th  style={{textAlign: "center"}}>Match Date</th>
+                <th  style={{textAlign: "center"}}>index</th><th  style={{textAlign: "center"}}>Team 1</th><th  style={{textAlign: "center"}}>Team 2</th><th  style={{textAlign: "center"}}>Match Date</th><th  style={{textAlign: "center"}}>Volenteers</th>
                 </tr>{this.getUpcomingMatches()}</table>: ''}
             {this.state.data === 2 ? <table className="table">
-                <tr><th  style={{textAlign: "center"}}>index</th><th  style={{textAlign: "center"}}>Team 1</th><th  style={{textAlign: "center"}}>Team 2</th><th  style={{textAlign: "center"}}>Match Date</th><th  style={{textAlign: "center"}}>Winning Team</th><th  style={{textAlign: "center"}}>Board Points</th><th  style={{textAlign: "center"}}>Queen Coverd By</th></tr>
+                <tr><th  style={{textAlign: "center"}}>index</th><th  style={{textAlign: "center"}}>Team 1</th><th  style={{textAlign: "center"}}>Team 2</th><th  style={{textAlign: "center"}}>Match Date</th><th  style={{textAlign: "center"}}>Winning Team</th><th  style={{textAlign: "center"}}>Board Points</th><th  style={{textAlign: "center"}}>Queen Covered By</th></tr>
                 {this.getComletedMatches()}</table>: ''}
             {this.state.data === 3 ? <table className="table">
                 <tr><th  style={{textAlign: "center"}}>index</th><th  style={{textAlign: "center"}}>Team Name</th><th  style={{textAlign: "center"}}>No Of Matches</th><th  style={{textAlign: "center"}}>Won</th><th  style={{textAlign: "center"}}>Lost</th><th  style={{textAlign: "center"}}>Total Board Points</th><th  style={{textAlign: "center"}}>No Of times Queen Covered</th></tr>
