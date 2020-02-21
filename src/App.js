@@ -11,6 +11,8 @@ import {
   Route
 } from "react-router-dom";
 import ViewDetails from './content/ViewDetails';
+import CompletedTournaments from './content/CompletedTournaments';
+import Contact from './content/contact';
 
 class App extends Component {
   render() {
@@ -22,6 +24,8 @@ class App extends Component {
             <Route exact path="/"><HomeContent /></Route>
             <Route path="/ongoing"><OnGoingTournaments /></Route>
             <Route path="/upcoming"><UpcomingTournaments /></Route>
+            <Route path="/completed"><CompletedTournaments /></Route>
+            <Route path="/contact"><Contact /></Route>
             <Route path="/viewDetails/:id"><ViewDetails /></Route>
           </Switch>
           <Footer />
