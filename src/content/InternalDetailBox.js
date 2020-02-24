@@ -15,7 +15,7 @@ class InternalDetailBox extends Component {
 
     getUpcomingMatches() {
         let todayDate = new Date().toLocaleDateString();
-        let isTimeBeforeEnd = new Date().getHours() < 17, i = 0;
+        let isTimeBeforeEnd = new Date().getHours() < 16, i = 0;
         return this.state.matchSummary.map((match) => {
             let date = new Date(match[3]).toLocaleDateString();
             if(date > todayDate || (date === todayDate && isTimeBeforeEnd)) {
@@ -27,7 +27,7 @@ class InternalDetailBox extends Component {
     }
     getComletedMatches() {
         let todayDate = new Date().toLocaleDateString();
-        let isTimeBeforeEnd = new Date().getHours() >= 17, i = 0;
+        let isTimeBeforeEnd = new Date().getHours() >= 16, i = 0;
         return this.state.matchSummary.map((match) => {
             let date = new Date(match[3]).toLocaleDateString();
             if(date < todayDate || (date === todayDate && isTimeBeforeEnd)) {
