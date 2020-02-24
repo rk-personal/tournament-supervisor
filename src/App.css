@@ -863,6 +863,12 @@ figure figcaption {
   padding: 20px;
 }
 
+.heading-fixed > tr > th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
 .topnav-link-div {
   flex-grow: 1;
   padding-top: 30px;

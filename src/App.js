@@ -7,7 +7,6 @@ import UpcomingTournaments from './content/UpcomingTournaments';
 import Footer from './navBars/Footer';
 import {
   BrowserRouter as Router,
-  Switch,
   Route
 } from "react-router-dom";
 import ViewDetails from './content/ViewDetails';
@@ -20,14 +19,13 @@ class App extends Component {
       <div className="App">
         <Router >
           <TopNav />
-          <Switch >
-            <Route exact path="/"><HomeContent /></Route>
-            <Route path="/ongoing"><OnGoingTournaments /></Route>
-            <Route path="/upcoming"><UpcomingTournaments /></Route>
-            <Route path="/completed"><CompletedTournaments /></Route>
-            <Route path="/contact"><Contact /></Route>
-            <Route path="/viewDetails/:id"><ViewDetails /></Route>
-          </Switch>
+          <Route exact={false} strict={false} path="/ongoing"><OnGoingTournaments /></Route>
+          <Route exact={false} strict={false} path="/upcoming"><UpcomingTournaments /></Route>
+          <Route exact={false} strict={false} path="/completed"><CompletedTournaments /></Route>
+          <Route exact={false} strict={false} path="/contact"><Contact /></Route>
+          <Route exact={false} strict={false} path="/viewDetails/:id"><ViewDetails /></Route>
+          <Route path="/"><HomeContent /></Route>
+
           <Footer />
         </Router>
       </div>

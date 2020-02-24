@@ -134,15 +134,26 @@ class InternalDetailBox extends Component {
             </div>
             <div style={{overflowY: 'auto', height: '400px', width: '100%'}}>
             {this.state.data === 1 ? <table className="table">
-                <tr>
-                <th  style={{textAlign: "center"}}>index</th><th  style={{textAlign: "center"}}>Team 1</th><th  style={{textAlign: "center"}}>Team 2</th><th  style={{textAlign: "center"}}>Match Date</th><th  style={{textAlign: "center"}}>Volenteers</th>
-                </tr>{this.getUpcomingMatches()}</table>: ''}
+                <thead className="heading-fixed">
+                    <tr>    
+                        <th  style={{textAlign: "center"}}>index</th><th  style={{textAlign: "center"}}>Team 1</th><th  style={{textAlign: "center"}}>Team 2</th><th  style={{textAlign: "center"}}>Match Date</th><th  style={{textAlign: "center"}}>Volenteers</th>
+                    </tr>
+                </thead>
+                <tbody>{this.getUpcomingMatches()}</tbody></table>: ''}
             {this.state.data === 2 ? <table className="table">
-                <tr><th  style={{textAlign: "center"}}>index</th><th  style={{textAlign: "center"}}>Team 1</th><th  style={{textAlign: "center"}}>Team 2</th><th  style={{textAlign: "center"}}>Match Date</th><th  style={{textAlign: "center"}}>Winning Team</th><th  style={{textAlign: "center"}}>Board Points</th><th  style={{textAlign: "center"}}>Queen Covered By</th></tr>
-                {this.getComletedMatches()}</table>: ''}
+                <thead className="heading-fixed">
+                    <tr>
+                        <th  style={{textAlign: "center"}}>index</th><th  style={{textAlign: "center"}}>Team 1</th><th  style={{textAlign: "center"}}>Team 2</th><th  style={{textAlign: "center"}}>Match Date</th><th  style={{textAlign: "center"}}>Winning Team</th><th  style={{textAlign: "center"}}>Board Points</th><th  style={{textAlign: "center"}}>Queen Covered By</th>
+                    </tr>
+                </thead>
+                <tbody>{this.getComletedMatches()}</tbody></table>: ''}
             {this.state.data === 3 ? <table className="table">
-                <tr><th  style={{textAlign: "center"}}>index</th><th  style={{textAlign: "center"}}>Team Name</th><th  style={{textAlign: "center"}}>No Of Matches</th><th  style={{textAlign: "center"}}>Won</th><th  style={{textAlign: "center"}}>Lost</th><th  style={{textAlign: "center"}}>Total Board Points</th><th  style={{textAlign: "center"}}>No Of times Queen Covered</th></tr>
-                {this.getScoreBoard()}</table>: ''}
+                <thead className="heading-fixed">
+                    <tr>
+                        <th  style={{textAlign: "center"}}>index</th><th  style={{textAlign: "center"}}>Team Name</th><th  style={{textAlign: "center"}}>No Of Matches</th><th  style={{textAlign: "center"}}>Won</th><th  style={{textAlign: "center"}}>Lost</th><th  style={{textAlign: "center"}}>Total Board Points</th><th  style={{textAlign: "center"}}>No Of times Queen Covered</th>
+                    </tr>
+                </thead>
+                <tbody>{this.getScoreBoard()}</tbody></table>: ''}
             </div>
         </div>
     );
