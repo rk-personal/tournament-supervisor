@@ -19,7 +19,7 @@ class InternalDetailBox extends Component {
         return this.state.matchSummary.map((match) => {
             let date = new Date(match[3]).toLocaleDateString();
             if(date > todayDate || (date === todayDate && isTimeBeforeEnd)) {
-                return <tr><td  style={{textAlign: "center"}}>{++i}</td><td  style={{textAlign: "center"}}>{match[1]}</td><td  style={{textAlign: "center"}}>{match[2]}</td><td  style={{textAlign: "center"}}>{match[3]}</td><td  style={{textAlign: "center"}}>{match[7]}</td></tr>;
+                return <tr><td  style={{textAlign: "center"}}>Q{++i}</td><td  style={{textAlign: "center"}}>{match[1]}</td><td  style={{textAlign: "center"}}>{match[2]}</td><td  style={{textAlign: "center"}}>{match[3]}</td><td  style={{textAlign: "center"}}>{match[7]}</td></tr>;
             } else {
                 return null
             }
@@ -45,7 +45,7 @@ class InternalDetailBox extends Component {
                 if(team1[team1.length-1] === " ") {
                     team1 = team1.substring(0, team1.length-1);
                 }
-                if(team2[team2.length-1] === " ") {
+                if(team2[team2.length-1] === " ") { 
                     team2 = team2.substring(0, team2.length-1);
                 }
                 if(team1[0] === " ") {
@@ -116,23 +116,23 @@ class InternalDetailBox extends Component {
         })
         return arr.map((team) => {
             console.log(team);
-                return <tr><td  style={{textAlign: "center"}}>{++i}</td><td  style={{textAlign: "center"}}>{team}</td><td  style={{textAlign: "center"}}>{teamsData[team].noOfMatches}</td><td  style={{textAlign: "center"}}>{teamsData[team].noOfWins}</td><td  style={{textAlign: "center"}}>{teamsData[team].noOfLost}</td><td  style={{textAlign: "center"}}>{teamsData[team].totalBoardPoints}</td><td  style={{textAlign: "center"}}>{teamsData[team].noOfQueenCovered}</td></tr>;
+                return <tr><td  style={{textAlign: "center"}}>{ (i < 16?'Q':'') + ++i }</td><td  style={{textAlign: "center"}}>{team}</td><td  style={{textAlign: "center"}}>{teamsData[team].noOfMatches}</td><td  style={{textAlign: "center"}}>{teamsData[team].noOfWins}</td><td  style={{textAlign: "center"}}>{teamsData[team].noOfLost}</td><td  style={{textAlign: "center"}}>{teamsData[team].totalBoardPoints}</td><td  style={{textAlign: "center"}}>{teamsData[team].noOfQueenCovered}</td></tr>;
         });
     }
+
+    getKnockOuts() {
+        return <img src={require('../../img/MicrosoftTeams-image.png')} alt="Knowck Out Chart"/>
+    }
   render() {
-    // let reader = new FileReader();
-    // reader.onload = async (e) => {
-    //     console.log(e.text);
-    // }
-    // reader.readAsText('../../img/Matches.csv')
     return (
-        <div className="board">
+        <div className="board" style={{height: this.state.data !== 4 ? '400px' : '800px'}}>
             <div className="internal-link-box">
                 <button className={"internal-links " + (this.state.data === 1 ? "active-internal-link": '')} onClick={() => this.updateData(1)}>Upcoming</button>
                 <button className={"internal-links " + (this.state.data === 2 ? "active-internal-link": '')}  onClick={() => this.updateData(2)}>Completed</button>
                 <button className={"internal-links " + (this.state.data === 3 ? "active-internal-link": '')}  onClick={() => this.updateData(3)}>ScoreBoard</button>
+                <button className={"internal-links " + (this.state.data === 4 ? "active-internal-link": '')}  onClick={() => this.updateData(4)}>KnockOut Chart</button>
             </div>
-            <div style={{overflowY: 'auto', height: '400px', width: '100%'}}>
+            <div style={{overflowY: 'auto', height: this.state.data !== 4 ? '400px' : '800px', width: '100%'}}>
             {this.state.data === 1 ? <table className="table">
                 <thead className="heading-fixed">
                     <tr>    
@@ -154,6 +154,7 @@ class InternalDetailBox extends Component {
                     </tr>
                 </thead>
                 <tbody>{this.getScoreBoard()}</tbody></table>: ''}
+            {this.state.data === 4 ? this.getKnockOuts(): ''}
             </div>
         </div>
     );
