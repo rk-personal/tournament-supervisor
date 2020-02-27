@@ -123,16 +123,21 @@ class InternalDetailBox extends Component {
     getKnockOuts() {
         return <img src={require('../../img/MicrosoftTeams-image.png')} alt="Knowck Out Chart"/>
     }
+
+    getSemisChart() {
+        return <img src={require('../../img/semifinalslots.png')} alt="Knowck Out Chart"/>
+    }
   render() {
     return (
-        <div className="board" style={{height: this.state.data !== 4 ? '400px' : '800px'}}>
+        <div className="board" style={{height: (this.state.data !== 4 && this.state.data !== 5) ? '400px' : '800px'}}>
             <div className="internal-link-box">
                 <button className={"internal-links " + (this.state.data === 1 ? "active-internal-link": '')} onClick={() => this.updateData(1)}>Upcoming</button>
                 <button className={"internal-links " + (this.state.data === 2 ? "active-internal-link": '')}  onClick={() => this.updateData(2)}>Completed</button>
                 <button className={"internal-links " + (this.state.data === 3 ? "active-internal-link": '')}  onClick={() => this.updateData(3)}>ScoreBoard</button>
                 <button className={"internal-links " + (this.state.data === 4 ? "active-internal-link": '')}  onClick={() => this.updateData(4)}>KnockOut Chart</button>
+                <button className={"internal-links " + (this.state.data === 5 ? "active-internal-link": '')}  onClick={() => this.updateData(5)}>Semi Final Chart</button>
             </div>
-            <div style={{overflowY: 'auto', height: this.state.data !== 4 ? '400px' : '800px', width: '100%'}}>
+            <div style={{overflowY: 'auto', height: (this.state.data !== 4 && this.state.data !== 5) ? '400px' : '800px', width: '100%'}}>
             {this.state.data === 1 ? <table className="table">
                 <thead className="heading-fixed">
                     <tr>    
@@ -155,6 +160,7 @@ class InternalDetailBox extends Component {
                 </thead>
                 <tbody>{this.getScoreBoard()}</tbody></table>: ''}
             {this.state.data === 4 ? this.getKnockOuts(): ''}
+            {this.state.data === 5 ? this.getSemisChart(): ''}
             </div>
         </div>
     );
