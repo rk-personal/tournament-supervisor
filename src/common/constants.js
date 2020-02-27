@@ -82,12 +82,14 @@ export const matcheData = [
     [2,"Shivani Ghatge/Richa Kumari ","Sanket/Dhanjay Jadhav","2020-02-25",7,1,1,"Khushboo Roy and RohanK"  ],
     [3,"Satej Kalyani/Jagdish Suryavanshi ","Vivek Pathare/Parag Agte","2020-02-25",8,2,2,"ShraddhaS and MayurPatil"  ],
     [4,"Kartik /Jay Patel","Aangi Shah/Suvisha KV","2020-02-25",7,2,2,"ShraddhaS and MayurPatil"  ],
-    ["","Kirankumar/Omkar Salgaonkar","Udaya/Triveni Ambre","2020-02-26","","","","Khushboo Roy and RohanK"  ],
-    ["","Aalok Kapoor/Abhijith Sivarajan","Aditya Firake/Chetan Tayade","2020-02-26","","","","Khushboo Roy and RohanK"  ],
-    ["","Sindhu Papineni/Sneha Papineni","Shriraj/Shrikant Chandraker","2020-02-26","","","","ShraddhaS and MayurPatil"  ],
-    ["","Sagar Bolishetty/deepak Jagdale","Maaz Shaikh/Vishal Mundada","2020-02-26","","","","ShraddhaS and MayurPatil"  ],
-    ["","Vishal Prajapati/Prashant Bhosale","Sameer Joshi/Sagar Khurd","2020-02-26","","","","Shreya Desai and Aejaz"  ],
-    ["","Aniket Mugal/Durgesh Gawhade","Satej Kalyani/Jagdish Suryavanshi","2020-02-26","","","","Shreya Desai and Aejaz"  ],
-    ["","Vivek Pathare/Parag Agte","Pooja Mahamuni/Amrut Fulsaundar","2020-02-26","","","","Varada Phatak and PrachiS"  ],
-    ["","Swapnil Ingawale/Mahesh Athare","Rohan Katariya/Rohit Sinkar","2020-02-26","","","","Varada Phatak and PrachiS"  ]
+    ["","Kirankumar/Omkar Salgaonkar","Udaya/Triveni Ambre","2020-02-27","","","","Khushboo Roy and RohanK"  ],
+    ["","Aalok Kapoor/Abhijith Sivarajan","Aditya Firake/Chetan Tayade","2020-02-27","","","","Khushboo Roy and RohanK"  ],
+    ["","Sindhu Papineni/Sneha Papineni","Shriraj/Shrikant Chandraker","2020-02-26",20,1,1,"ShraddhaS and MayurPatil"  ],
+    ["","Sagar Bolishetty/deepak Jagdale","Maaz Shaikh/Vishal Mundada","2020-02-26",20,1,1,"ShraddhaS and MayurPatil"  ],
+    ["","Vishal Prajapati/Prashant Bhosale","Sameer Joshi/Sagar Khurd","2020-02-27","","","","Shreya Desai and Aejaz"  ],
+    ["","Aniket Mugal/Durgesh Gawhade","Satej Kalyani/Jagdish Suryavanshi","2020-02-26",20,2,2,"Shreya Desai and Aejaz"  ],
+    ["","Vivek Pathare/Parag Agte","Pooja Mahamuni/Amrut Fulsaundar","2020-02-26",20,1,1,"Varada Phatak and PrachiS"  ],
+    ["","Swapnil Ingawale/Mahesh Athare","Rohan Katariya/Rohit Sinkar","2020-02-26",20,2,2,"Varada Phatak and PrachiS"  ],
+    ["","Sindhu Papineni/Sneha Papineni","Sagar Bolishetty/deepak Jagdale","2020-02-27",20,1,1,"ShraddhaS and MayurPatil"  ],
+    ["","Vivek Pathare/Parag Agte","Rohan Katariya/Rohit Sinkar","2020-02-27",20,2,2,"Varada Phatak and PrachiS"  ]
   ];
